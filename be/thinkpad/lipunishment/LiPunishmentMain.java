@@ -1,32 +1,16 @@
 package be.thinkpad.lipunishment;
 
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.TimeZone;
 import java.util.UUID;
 import java.util.logging.Logger;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
 import java.util.HashMap;
 
-import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.enchantments.Enchantment;
@@ -34,10 +18,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.Bukkit;
-import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
-import org.bukkit.Sound;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.messaging.PluginMessageListener;
@@ -48,13 +30,9 @@ import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
 
 import be.thinkpad.lipunishment.commands.Commands;
-import be.thinkpad.lol.Utils;
-import be.thinkpad.lipunishment.Listeners;
 import fr.maxtherobot.inventory.InventoryAPI;
 import fr.maxtherobot.inventory.ItemUtils;
-import net.md_5.bungee.api.chat.TextComponent;
 
-@SuppressWarnings("unused")
 public class LiPunishmentMain extends JavaPlugin implements PluginMessageListener {
 	public static ItemStack Reach;
 	public static ItemStack AntiKB;
@@ -170,7 +148,6 @@ public class LiPunishmentMain extends JavaPlugin implements PluginMessageListene
 	
 
 	public static void broadcastReported(int type, String name, String server, String reporter) {
-				TextComponent msg = new TextComponent();
 				if(type == 0) {
 					Bukkit.broadcast("§5 >>REPORT §9"+reporter+" §c a report §b" + name + " §c dans le serveur §e" + server + " §cpour §6Reach", "punishment.report.view");
 					sendReportToServers("§5 >>REPORT §9"+reporter+" §c a report §b" + name + " §c dans le serveur §e" + server + " §cpour §6Reach");
